@@ -1,11 +1,6 @@
-def a():
-    print('a() starts')
-    b()
-    print('a() returns')
-
-def b():
-    print('b() starts')
-    a()
-    print('b() returns')
-
-a()
+def a(b):
+    b+=1
+    return b
+aaa=0
+a(aaa)
+print(a(aaa))
