@@ -169,10 +169,57 @@
     #   print('列表中不存在该元素')
 
   #用 Sort() 方法对列表进行排序
-spam=[222,234,12,24,21,556,3,-21,-2,0]
-spam.sort()
-print(spam)
+    # spam=[222,234,12,24,21,556,3,-21,-2,0]
+    # spam.sort()
+    # print(spam)
 
-spam=['a','aa','aaa','aa']  
-spam.sort()
-print(spam)
+    # spam=['z','Z','a','aa','aaa','AA']  
+    # spam.sort()
+    # print(spam)
+
+    # spam=['z','Z','a','aa','aaa','AA'] 
+    # spam.sort(key=str.lower)
+    # print(spam)
+
+    # spam=[4,3,2,1,'a','b']
+    # try:
+    #   spam.sort()
+    # except TypeError:
+    #   print('列表中存在不同类型的数据')
+
+  #使用 reverse() 方法对列表进行反向排序
+    # spam=[1,2,3,4,5]
+    # spam.reverse()
+    # print(spam)
+
+  #python中缩进规则的例外
+    # spam=[1,
+
+    # 2,        31,
+
+    #       4]
+    # print(spam)
+
+  #例子程序，神奇8球和列表
+    # import random
+    # messages=['你今天很幸运',
+    # '你今天不太幸运',
+    #       '你今天运气一般',
+    #     '你今天运气很差',
+    #   '你今天运气极差']
+    # print(messages[random.randint(0,len(messages)-1)])
+
+#序列数据类型
+name='Zophie'
+print(name[0])
+print(name[-2])
+print(name[0:4])
+print(name)
+print('Z' in name)
+print('ph' in name)
+print('op' not in name)
+for i in name:
+  print(f'*****{i}*****')
+  
+  #可变和不可变数据类型
+  
