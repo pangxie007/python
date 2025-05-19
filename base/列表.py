@@ -132,14 +132,14 @@
     # print(a)
 
 #方法
-# spam=['a','aa','aaa','aa']
-# print(spam.index('a'))
-# print(spam.index('aaa'))
-# print(spam.index('aa')) #列表中存在多个重复的 aa 但是只会输出第一个值的索引
-# try:
-#   print(spam.index('b'))
-# except ValueError:
-#   print('列表中不存在该元素')
+  # spam=['a','aa','aaa','aa']
+  # print(spam.index('a'))
+  # print(spam.index('aaa'))
+  # print(spam.index('aa')) #列表中存在多个重复的 aa 但是只会输出第一个值的索引
+  # try:
+  #   print(spam.index('b'))
+  # except ValueError:
+  #   print('列表中不存在该元素')
 
   #用append()方法和 insert()方法在列表中添加元素 append()方法在列表末尾添加元素 insert()方法在列表中插入元素
       # spam=['a','aa','aaa','aa']
@@ -210,16 +210,127 @@
     # print(messages[random.randint(0,len(messages)-1)])
 
 #序列数据类型
-name='Zophie'
-print(name[0])
-print(name[-2])
-print(name[0:4])
-print(name)
-print('Z' in name)
-print('ph' in name)
-print('op' not in name)
-for i in name:
-  print(f'*****{i}*****')
+  # name='Zophie'
+  # print(name[0])
+  # print(name[-2])
+  # print(name[0:4])
+  # print(name)
+  # print('Z' in name)
+  # print('ph' in name)
+  # print('op' not in name)
+  # for i in name:
+    # print(f'*****{i}*****')
   
-  #可变和不可变数据类型
-  
+  #可变和不可变数据类型 列表属于可变数据类型 字符串属于不可变数据类型
+    # name='Zophie'
+    # nameList=[1,2,3,4]
+    # try:
+    #   name[0]='2'
+    # except TypeError:
+    #   print('字符串数据类型是不可变数据类型')
+    # nameList[0]=2
+    # print(nameList)
+
+  #元组数据类型
+    # eggs=('hello',42,0.5)
+    # spam=[1,2,3,4,0.5]
+    # print(type(eggs))
+    # print(type(spam))
+    # print(eggs)
+    # print(spam)
+    # print(eggs[0])
+    # print(eggs[1:3])
+    # print(len(eggs))
+
+    # try:
+    #   eggs[0]=1
+    # except TypeError:
+    #   print('元组数据类型是不可变数据类型')
+
+    # spam=(1,2,3,4,4)
+    # print(type(('hello')))
+    # print(type(('hello',)))
+    # print(type((9)))
+    # print(type((1,0)))
+    # print(type(spam))
+
+  #用list（）和 tuple（）函数来转换数据类型
+    # spam=['hello',1,2]
+    # spamTuple=('hh',2,2,2)
+    # print(type(spam))
+    # print(type(tuple(spam)))
+    # print(spam)
+
+    # print(type(spamTuple))
+    # print(type(list(spamTuple)))
+    # print(spamTuple)
+
+#引用
+  # spam=42
+  # cheese=spam
+  # spam=100
+  # print(spam)
+  # print(cheese)
+
+  # spam=[0,1,2,33]
+  # cheese=spam
+  # cheese[1]=100
+  # print(spam)
+  # print(cheese)
+
+  #标识和id（）函数
+    # print(id('aaaa'))
+    # spam='aaaa'
+    # print(id(spam))
+    # spam+='bbb'
+    # print(id(spam))
+
+    # spam=[1,1,2,2]
+    # print(id(spam))
+    # spam+=[3,3]
+    # print(id(spam))
+    # spam.append(4)
+    # print(id(spam))
+    # print(spam)
+
+  #传递引用
+    # def eggs(someParameteer):
+    #   someParameteer.append('Hello')
+    # spam=[1,1,2,2]
+    # eggs(spam)
+    # print(spam)
+
+  #copy模块的 copy()和deepcopy()函数 copy函数只会复制第一层列表【字列表的id相同】 deepcopy函数会复制所有列表
+    # import copy
+    # spam=[1,2,3,[4,5,6]]
+    # print('spam主列表ID:',end=' ')
+    # print(id(spam))
+    # print('spam子列表ID:',end=' ')
+    # print(id(spam[3][:]))
+    # print('spam字列表元素ID:',end=' ')
+    # print(id(spam[3][0]))
+
+    # aaaa=copy.deepcopy(spam)
+    # print('aaaa主列表ID:',end=' ')
+    # print(id(aaaa))
+    # print('aaaa子列表ID:',end=' ')
+    # print(id(aaaa[3][:]))
+    # print('aaaa子列表元素ID:',end=' ')
+    # print(id(aaaa[3][0]))
+
+    # print('copy')
+    # spam=[1,2,3,[4,5,6]]
+    # print('spam追了表ID:',end=' ')
+    # print(id(spam))
+    # print('spam子列表ID:',end=' ')
+    # print(id(spam[3][:]))
+    # print('spam子列表元素ID:',end=' ')
+    # print(id(spam[3][0]))
+
+    # bbbb=copy.copy(spam)
+    # print('bbbb主列表ID:',end= ' ')
+    # print(id(bbbb))
+    # print('bbbb子列表ID:',end= ' ')
+    # print(id(bbbb[3][:]))
+    # print('bbbb子列表元素ID:',end= ' ')
+    # print(id(bbbb[3][0]))

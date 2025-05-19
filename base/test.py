@@ -1,6 +1,2 @@
-def a(b):
-    b+=1
-    return b
-    
-aaa=int(input())
-print(aaa)
+for i in range(20):
+    print(i)
