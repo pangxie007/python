@@ -53,18 +53,124 @@
         #         print('生日字典以更新')
         #         print(birthdays)
     #keys()、values()和items()方法
-spam={'color':'red','agge':42}
-for i in spam.keys():
-    print(i)
-for i in spam.values():
-    print(i)
-for i in spam.items():
-    print(i)
-    print(type(i))
-print()
-spam.keys()
-spam.values()
-spam.items()
-#items()方法将字典的键值赋予给不同的变量进行打印
-for k,v in spam.items():
-    print(k + ' is ' + str(v))
+        # spam={'color':'red','agge':42}
+        # for i in spam.keys():
+        #     print(i)
+        # for i in spam.values():
+        #     print(i)
+        # for i in spam.items():
+        #     print(i)
+        #     print(type(i))
+        # print()
+        # spam.keys()
+        # spam.values()
+        # spam.items()
+        # #items()方法将字典的键值赋予给不同的变量进行打印
+        # for k,v in spam.items():
+        #     print(k + ' is ' + str(v))
+
+    #检查字典中是否存在键或值 in he not in
+        # spam={'color':'red','agge':42}
+        # print('color' in spam.keys())
+        # print('red' in spam.values())
+
+        # print('color' not in spam.keys())
+        # print('red' not in spam.values())
+
+        # print('color' in spam)
+        # print('red' in spam)
+    
+    #get()方法 只是放回值，不会改变字典
+        # spam={'color':'red','agge':42}
+        # print(spam)
+        # print('我的名字是' + spam.get('name','px') + '如果没有则返回px')
+        # print(spam)
+        # print('我的年龄是' + str(spam.get('agge',22)) + '如果没有则返回22')
+    
+    #setdefault()方法
+        #传统的检测方法，步骤多
+        # spam={'color':'red','agge':42}
+        # if 'name' not in spam:
+        #     spam['name']='px'
+        # print(spam)
+
+        # print(spam.setdefault('love','hdf'))
+        # print(spam)
+        # #建存在于字典中则打印
+        # print(spam.setdefault('color','yellow'))
+        # #建不存在于字典中则添加
+        # print(spam.setdefault('love','hdf'))
+        # print(spam)
+
+        # message='It was a bright cold day in April,and the clocks were striking thirteen.'
+        # count={}
+        # for chacacter in message:
+        #     count.setdefault(chacacter,0)
+        #     count[chacacter]=count[chacacter]+1
+        # print(count)
+
+#美观的输出 pprint模块中的pprint()函数和pformat()函数
+    # import pprint
+    # message='It was a bright cold day in April,and the clocks were striking thirteen.'
+    # count={}
+    # for chacacter in message:
+    #     count.setdefault(chacacter,0)
+    #     count[chacacter]=count[chacacter]+1
+    # pprint.pprint(count)
+
+#使用数据结构对真实世界建模
+theBorad={'T-L':' ','T-M':' ','T-R':' ',
+          'M-L':' ','M-M':' ','M-R':' ',
+          'B-L':' ','B-M':' ','B-R':' '}
+
+def printBorad(Borad):
+    print(Borad['T-L'] + '|' + Borad['T-M'] + '|' + Borad['T-R'])
+    print('-+-+-')
+    print(Borad['M-L'] + '|' + Borad['M-M'] + '|' + Borad['M-R'])
+    print('-+-+-')
+    print(Borad['B-L'] + '|' + Borad['B-M'] + '|' + Borad['B-R'])
+def gameTurn(Turn):
+    global turn
+    if Turn == 'X':
+        turn='O'
+    else:
+        turn='X'
+def gameOver(Borad):
+    global game
+    if Borad['T-L'] == Borad['T-M'] == Borad['T-R'] != ' ':
+        print('游戏结束'+ Borad['T-L'] + '赢了')
+        game= False
+    elif Borad['M-L'] == Borad['M-M'] == Borad['M-R'] != ' ':
+        print('游戏结束'+ Borad['M-L'] + '赢了')
+        game= False
+    elif Borad['B-L'] == Borad['B-M'] == Borad['B-R'] != ' ':
+        print('游戏结束'+ Borad['B-L'] + '赢了')
+        game= False
+    elif Borad['T-L'] == Borad['M-M'] == Borad['B-R'] != ' ':
+        print('游戏结束'+ Borad['T-L'] + '赢了')
+        game= False
+    elif Borad['T-R'] == Borad['M-M'] == Borad['B-L'] != ' ':
+        print('游戏结束'+ Borad['T-R'] + '赢了')
+        game= False
+    elif Borad['T-L'] == Borad['M-L'] == Borad['B-L'] != ' ':
+        print('游戏结束'+ Borad['T-L'] + '赢了')
+        game= False
+    elif Borad['T-M'] == Borad['M-M'] == Borad['B-M'] != ' ':
+        print('游戏结束'+ Borad['T-M'] + '赢了')
+        game= False
+    elif Borad['T-R'] == Borad['M-R'] == Borad['B-R'] != ' ':
+        print('游戏结束'+ Borad['T-R'] + '赢了')
+        game= False
+turn='X'
+game=True
+printBorad(theBorad)
+for i in range(9):
+    if game==False:
+        break
+    print('你现在是' + turn + '输入你要下棋的位置')
+    move=input()
+    theBorad[move]=turn
+    gameTurn(turn)
+    printBorad(theBorad)
+    if i >=3:
+        gameOver(theBorad)

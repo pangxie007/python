@@ -12,7 +12,18 @@
 # 55e9313cedb6aeb50fe8dfa0de2e0f37953aaba7
 #  commit-2 父commit是 3153f4c5aae9b15bd96521aaefad4ffe24d70899
 
-spam={'color':'red','agge':42}
-spam.keys()
-spam.values()
-spam.items()
+#使用数据结构对真实世界建模
+def test():
+    global game
+    print('ceshi ')
+    print(bbb)
+    game=False
+game=True
+bbb='bbb'
+
+for i in range(8):
+    if game==True:
+        test()
+    elif game==False:
+        break
+    print('aaaaaaa')
