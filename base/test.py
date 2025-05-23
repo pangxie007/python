@@ -13,9 +13,11 @@
 #  commit-2 父commit是 3153f4c5aae9b15bd96521aaefad4ffe24d70899
 
 #使用数据结构对真实世界建模
-for i in range(10):
-    print(i)
-    for a in range(5):
-      print(a)
-      if a == 2:
-        break
+a={'a':1,'n':2,'c':1}
+s={}
+for v in a.values():
+    print(v)
+    print(type(v))
+print(s)
+if a['ww']<2:
+    print('ok')

@@ -119,64 +119,78 @@
     # pprint.pprint(count)
 
 #使用数据结构对真实世界建模
-theBorad={'T-L':' ','T-M':' ','T-R':' ',
-          'M-L':' ','M-M':' ','M-R':' ',
-          'B-L':' ','B-M':' ','B-R':' '}
+# theBorad={'T-L':' ','T-M':' ','T-R':' ',
+#           'M-L':' ','M-M':' ','M-R':' ',
+#           'B-L':' ','B-M':' ','B-R':' '}
 
-def printBorad(Borad):
-    print(Borad['T-L'] + '|' + Borad['T-M'] + '|' + Borad['T-R'])
-    print('-+-+-')
-    print(Borad['M-L'] + '|' + Borad['M-M'] + '|' + Borad['M-R'])
-    print('-+-+-')
-    print(Borad['B-L'] + '|' + Borad['B-M'] + '|' + Borad['B-R'])
-def gameTurn(Turn):
-    global turn
-    if Turn == 'X':
-        turn='O'
-    else:
-        turn='X'
-def gameOver(Borad):
-    global game
-    if Borad['T-L'] == Borad['T-M'] == Borad['T-R'] != ' ':
-        print('游戏结束'+ Borad['T-L'] + '赢了')
-        game= False
-    elif Borad['M-L'] == Borad['M-M'] == Borad['M-R'] != ' ':
-        print('游戏结束'+ Borad['M-L'] + '赢了')
-        game= False
-    elif Borad['B-L'] == Borad['B-M'] == Borad['B-R'] != ' ':
-        print('游戏结束'+ Borad['B-L'] + '赢了')
-        game= False
-    elif Borad['T-L'] == Borad['M-M'] == Borad['B-R'] != ' ':
-        print('游戏结束'+ Borad['T-L'] + '赢了')
-        game= False
-    elif Borad['T-R'] == Borad['M-M'] == Borad['B-L'] != ' ':
-        print('游戏结束'+ Borad['T-R'] + '赢了')
-        game= False
-    elif Borad['T-L'] == Borad['M-L'] == Borad['B-L'] != ' ':
-        print('游戏结束'+ Borad['T-L'] + '赢了')
-        game= False
-    elif Borad['T-M'] == Borad['M-M'] == Borad['B-M'] != ' ':
-        print('游戏结束'+ Borad['T-M'] + '赢了')
-        game= False
-    elif Borad['T-R'] == Borad['M-R'] == Borad['B-R'] != ' ':
-        print('游戏结束'+ Borad['T-R'] + '赢了')
-        game= False
-turn='X'
-game=True
-printBorad(theBorad)
-for i in range(9):
-    if game==False:
-        break
-    print('你现在是' + turn + '输入你要下棋的位置')
-    move=input()
-    if move not in theBorad.keys():
-        print('地址输入错误')
-        break
-    theBorad[move]=turn
-    gameTurn(turn)
-    printBorad(theBorad)
-    if i >=3:
-        gameOver(theBorad)
-    if ' ' not in theBorad.values():
-        print('游戏结束，平局！！！')
-        break
+# def printBorad(Borad):
+#     print(Borad['T-L'] + '|' + Borad['T-M'] + '|' + Borad['T-R'])
+#     print('-+-+-')
+#     print(Borad['M-L'] + '|' + Borad['M-M'] + '|' + Borad['M-R'])
+#     print('-+-+-')
+#     print(Borad['B-L'] + '|' + Borad['B-M'] + '|' + Borad['B-R'])
+# def gameTurn(Turn):
+#     global turn
+#     if Turn == 'X':
+#         turn='O'
+#     else:
+#         turn='X'
+# def gameOver(Borad):
+#     global game
+#     if Borad['T-L'] == Borad['T-M'] == Borad['T-R'] != ' ':
+#         print('游戏结束'+ Borad['T-L'] + '赢了')
+#         game= False
+#     elif Borad['M-L'] == Borad['M-M'] == Borad['M-R'] != ' ':
+#         print('游戏结束'+ Borad['M-L'] + '赢了')
+#         game= False
+#     elif Borad['B-L'] == Borad['B-M'] == Borad['B-R'] != ' ':
+#         print('游戏结束'+ Borad['B-L'] + '赢了')
+#         game= False
+#     elif Borad['T-L'] == Borad['M-M'] == Borad['B-R'] != ' ':
+#         print('游戏结束'+ Borad['T-L'] + '赢了')
+#         game= False
+#     elif Borad['T-R'] == Borad['M-M'] == Borad['B-L'] != ' ':
+#         print('游戏结束'+ Borad['T-R'] + '赢了')
+#         game= False
+#     elif Borad['T-L'] == Borad['M-L'] == Borad['B-L'] != ' ':
+#         print('游戏结束'+ Borad['T-L'] + '赢了')
+#         game= False
+#     elif Borad['T-M'] == Borad['M-M'] == Borad['B-M'] != ' ':
+#         print('游戏结束'+ Borad['T-M'] + '赢了')
+#         game= False
+#     elif Borad['T-R'] == Borad['M-R'] == Borad['B-R'] != ' ':
+#         print('游戏结束'+ Borad['T-R'] + '赢了')
+#         game= False
+# turn='X'
+# game=True
+# printBorad(theBorad)
+# for i in range(9):
+#     if game==False:
+#         break
+#     print('你现在是' + turn + '输入你要下棋的位置')
+#     move=input()
+#     if move not in theBorad.keys():
+#         print('地址输入错误')
+#         break
+#     theBorad[move]=turn
+#     gameTurn(turn)
+#     printBorad(theBorad)
+#     if i >=3:
+#         gameOver(theBorad)
+#     if ' ' not in theBorad.values():
+#         print('游戏结束，平局！！！')
+#         break
+
+#嵌套的字典和列表
+# allGuests={'px':{'apples':5,'pretzels':12},
+        #    'hdf':{'banaler':3,'ham sandwiches':2},
+        #    'cat':{'apples':2,'cups':3}}
+# def totalBrought(gusts,time):
+    # number=0
+    # for k,v in gusts.items():
+        # number+=v.get(time,0)
+    # return number
+# print('苹果有' + str(totalBrought(allGuests,'apples')))
+# print('三明治有'+ str(totalBrought(allGuests,'ham sandwiches')))
+# print('杯子有'+ str(totalBrought(allGuests,'cups')))
+# print('辣椒有'+ str(totalBrought(allGuests,'lj')))
