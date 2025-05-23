@@ -13,17 +13,9 @@
 #  commit-2 父commit是 3153f4c5aae9b15bd96521aaefad4ffe24d70899
 
 #使用数据结构对真实世界建模
-def test():
-    global game
-    print('ceshi ')
-    print(bbb)
-    game=False
-game=True
-bbb='bbb'
-
-for i in range(8):
-    if game==True:
-        test()
-    elif game==False:
+for i in range(10):
+    print(i)
+    for a in range(5):
+      print(a)
+      if a == 2:
         break
-    print('aaaaaaa')

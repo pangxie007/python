@@ -169,8 +169,14 @@ for i in range(9):
         break
     print('你现在是' + turn + '输入你要下棋的位置')
     move=input()
+    if move not in theBorad.keys():
+        print('地址输入错误')
+        break
     theBorad[move]=turn
     gameTurn(turn)
     printBorad(theBorad)
     if i >=3:
         gameOver(theBorad)
+    if ' ' not in theBorad.values():
+        print('游戏结束，平局！！！')
+        break
