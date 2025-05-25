@@ -14,10 +14,5 @@
 
 #使用数据结构对真实世界建模
 a={'a':1,'n':2,'c':1}
-s={}
-for v in a.values():
-    print(v)
-    print(type(v))
-print(s)
-if a['ww']<2:
-    print('ok')
+b=[1,2,3,4,5]
+print(sum(a.values()))
