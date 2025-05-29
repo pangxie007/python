@@ -239,5 +239,5 @@
 
 #用pyperclip模块复制和粘贴字符串
 import pyperclip
-pyperclip.copy('Hello World')
-print(pyperclip.paste())
+pyperclip.copy('这是一个使用pyperclip模块的测试，将会在你的剪切板中显示！！！')
+# print(pyperclip.paste())

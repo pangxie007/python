@@ -1,0 +1,140 @@
+`sys` 模块是 Python 标准库中的一个内置模块，提供了许多与 Python 解释器和系统环境交互的功能。你可以通过 `import sys` 来导入它。下面是该模块的一些核心功能和常用用法：
+
+
+### 1. **命令行参数**
+通过 `sys.argv` 获取命令行参数，它是一个包含命令行参数的列表。
+- `sys.argv[0]`：脚本名称。
+- `sys.argv[1:]`：传递给脚本的参数。
+
+**示例**：
+```python
+import sys
+
+print(f"脚本名称: {sys.argv[0]}")
+print(f"参数数量: {len(sys.argv) - 1}")
+print(f"参数列表: {sys.argv[1:]}")
+```
+**运行命令**：
+```bash
+python script.py arg1 arg2
+```
+**输出**：
+```
+脚本名称: script.py
+参数数量: 2
+参数列表: ['arg1', 'arg2']
+```
+
+
+### 2. **标准输入/输出/错误**
+- `sys.stdin`：标准输入（默认从键盘读取）。
+- `sys.stdout`：标准输出（默认打印到控制台）。
+- `sys.stderr`：标准错误（用于错误信息）。
+
+**示例：重定向输出到文件**
+```python
+import sys
+
+# 保存原始输出
+original_stdout = sys.stdout
+
+with open('output.txt', 'w') as f:
+    sys.stdout = f  # 将输出重定向到文件
+    print('Hello, file!')
+
+sys.stdout = original_stdout  # 恢复原始输出
+print('Hello, console!')
+```
+
+
+### 3. **解释器相关信息**
+- `sys.version`：Python 版本字符串。
+- `sys.version_info`：版本信息元组（`major`, `minor`, `micro`, `releaselevel`, `serial`）。
+- `sys.executable`：Python 解释器的路径。
+- `sys.platform`：运行平台（如 `'linux'`, `'win32'`, `'darwin'`）。
+
+**示例**：
+```python
+import sys
+
+print(f"Python 版本: {sys.version}")
+print(f"平台: {sys.platform}")
+print(f"解释器路径: {sys.executable}")
+```
+
+
+### 4. **退出程序**
+- `sys.exit([arg])`：退出 Python 解释器，`arg` 为退出状态码（默认为 0，表示成功）。
+
+**示例**：
+```python
+import sys
+
+def main():
+    if len(sys.argv) < 2:
+        print("错误：缺少参数")
+        sys.exit(1)  # 非零状态码表示错误
+    print(f"处理参数: {sys.argv[1]}")
+
+if __name__ == "__main__":
+    main()
+```
+
+
+### 5. **内存和递归限制**
+- `sys.getsizeof(object)`：返回对象的内存占用大小（字节）。
+- `sys.getrecursionlimit()`：获取最大递归深度。
+- `sys.setrecursionlimit(limit)`：设置最大递归深度（需谨慎使用）。
+
+**示例**：
+```python
+import sys
+
+print(f"列表内存大小: {sys.getsizeof([1, 2, 3])} 字节")
+print(f"默认递归限制: {sys.getrecursionlimit()}")
+
+# 设置新的递归限制（谨慎使用！可能导致栈溢出）
+# sys.setrecursionlimit(5000)
+```
+
+
+### 6. **模块和路径管理**
+- `sys.path`：模块搜索路径列表（可动态修改）。
+- `sys.modules`：已加载模块的字典。
+
+**示例：添加自定义模块路径**
+```python
+import sys
+
+# 添加当前目录的子目录到模块搜索路径
+sys.path.append('./mylib')
+
+import mymodule  # 现在可以导入 mylib 目录下的模块
+```
+
+
+### 7. **异常处理钩子**
+- `sys.excepthook`：全局异常处理函数（可自定义）。
+
+**示例**：
+```python
+import sys
+
+def custom_exception_handler(exc_type, exc_value, exc_traceback):
+    print(f"自定义异常处理: {exc_type.__name__}: {exc_value}")
+
+sys.excepthook = custom_exception_handler
+
+# 触发异常
+result = 1 / 0  # 会调用自定义处理函数
+```
+
+
+### 8. **其他功能**
+- `sys.byteorder`：字节序（`'little'` 或 `'big'`）。
+- `sys.maxsize`：最大整数值（取决于系统位数）。
+- `sys.stdin.read()`：读取标准输入的全部内容。
+
+
+### 总结
+`sys` 模块提供了许多与 Python 解释器和系统环境交互的底层功能，常用于命令行参数处理、输入输出重定向、程序退出控制、内存管理等场景。建议查阅 [官方文档](https://docs.python.org/3/library/sys.html) 了解更多细节。
