@@ -157,7 +157,7 @@
         # print(spam.startswith('Hello World!'))
         # print(spam.endswith('Hello World!'))
 
-    #字符串方法join()和split()
+    #字符串方法 join() 和 split()
         # spam=['cat','rats','bats']      #join()方法可以将字符串列表连接起来
         # symbol='|'
         # print(symbol.join(spam))
@@ -165,6 +165,9 @@
         # print(symbol.join(spam))
         # symbol=','
         # print(symbol.join(spam))
+
+        # reNew='\n'.join(spam)            #这种方法更为简便
+        # print(reNew)
 
         # spam='aaa bbb ccc eee ddd iii'
         # print(spam.split())
