@@ -1,1 +1,2 @@
-需要用到僵尸模块 此处省略
+import zombiedice
+zombiedice.demo()
