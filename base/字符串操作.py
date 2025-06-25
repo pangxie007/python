@@ -165,8 +165,11 @@
         # print(symbol.join(spam))
         # symbol=','
         # print(symbol.join(spam))
-
+        #
         # reNew='\n'.join(spam)            #这种方法更为简便
+        # print(reNew)
+        #
+        # reNew='-'.join(spam)
         # print(reNew)
 
         # spam='aaa bbb ccc eee ddd iii'
@@ -244,3 +247,8 @@
 import pyperclip
 pyperclip.copy('这是一个使用pyperclip模块的测试，将会在你的剪切板中显示！！！')
 # print(pyperclip.paste())
+
+#字符串格式化
+# num=1
+# formatted=f"{num:02d}"    #0是填充符 2是指定长度 d是整数字符
+# print(formatted)
