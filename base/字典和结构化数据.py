@@ -116,6 +116,7 @@
     # for chacacter in message:
     #     count.setdefault(chacacter,0)
     #     count[chacacter]=count[chacacter]+1
+    # print(count)
     # pprint.pprint(count)
 
 #使用数据结构对真实世界建模

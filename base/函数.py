@@ -1,9 +1,9 @@
-def hello(name):
-    print('Hello world' + name)
-    print('你好世界' + name)
-    print(name)
+# def hello(name):
+#     print('Hello world' + name)
+#     print('你好世界' + name)
+#     print(name)
 
-hello('px')
+# hello('px')
 #return 返回值
     # import random
     # def gitAnswer(answerNumber):
@@ -125,13 +125,13 @@ hello('px')
     # print(spam(1))
 
     #当try捕捉到异常然后将捕捉的异常和except 指定的异常进行对比 符合条件时 执行except中的代码 不符合则不管
-    # def spam(divideBy):
+def spam(divideBy):
 
-    #     return 42 / divideBy
-    # try:
-    #     print(spam(2))
-    #     print(spam(12))
-    #     print(spam(0))
-    #     print(spam(1))
-    # except ZeroDivision:
-    #     print('实参不能为0')
+    return 42 / divideBy
+try:
+    print(spam(2))
+    print(spam(12))
+    print(spam(0))
+    print(spam(1))
+except ZeroDivisionError:
+    print('实参不能为0')
