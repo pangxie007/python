@@ -77,6 +77,7 @@
         # print('color' not in spam.keys())
         # print('red' not in spam.values())
 
+        # #可以看到 测试建可以 但是测试值不可以
         # print('color' in spam)
         # print('red' in spam)
     

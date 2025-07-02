@@ -244,11 +244,11 @@
     # print(ord('A')>ord('B'))
 
 #用pyperclip模块复制和粘贴字符串
-import pyperclip
-pyperclip.copy('这是一个使用pyperclip模块的测试，将会在你的剪切板中显示！！！')
-# print(pyperclip.paste())
+    # import pyperclip
+    # pyperclip.copy('这是一个使用pyperclip模块的测试，将会在你的剪切板中显示！！！')
+    # print(pyperclip.paste())
 
 #字符串格式化
-# num=1
-# formatted=f"{num:02d}"    #0是填充符 2是指定长度 d是整数字符
-# print(formatted)
+    # num=1
+    # formatted=f"{num:02d}"    #0是填充符 2是指定长度 d是整数字符
+    # print(formatted)

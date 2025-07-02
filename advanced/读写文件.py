@@ -184,7 +184,7 @@ dbm 模块
     # cats=['Zophie','Pooka','Simon']
     # shelFile['Cats']=cats
     # shelFile.close()
-
+    #
     # print(shelFile['Cats'])
     # shelFile.close()          #使用close关闭文件之后下面的list(shelFile.keys()),list(shelFile.values())会无法正常运行 因为已经关闭了文件
     # print(type(shelFile.close()))
@@ -194,7 +194,7 @@ dbm 模块
     # shelFile.close()
 
 #用 pprint.pformat()函数保存变量
-    import pprint
+    # import pprint
     # cats=[{'name':'px','desc':'student'},{'name':'hdf','desc':'workmen'}]
     # print(pprint.pformat(cats))
     # print(type(pprint.pformat(cats)))
