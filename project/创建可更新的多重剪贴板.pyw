@@ -4,6 +4,7 @@ python filename save [name]   将剪切板的内容用[name]关键字存储在mc
 python filename [name]        将存储的[name]从mcb.pyw中读取出来存放到剪切板中
 python filename list          列出所有可用关键字
 python filename del           清空mcb中存储的所有值
+python filename del [name]    删除mcb中指定的[name]关键字
 """
 import sys,pyperclip,shelve
 mcbShelf=shelve.open('mcb')
@@ -17,6 +18,8 @@ if len(sys.argv)==3 and sys.argv[1].lower() == 'save':
       mcbShelf.setdefault(sys.argv[2].lower(),pyperclip.paste())
 elif len(sys.argv)==2 and sys.argv[1].lower() == 'list':
       pyperclip.copy(list(mcbShelf.keys()))
+elif len(sys.argv) == 3 and sys.argv[1].lower() == 'del':
+      del mcbShelf[sys.argv[3]]
 elif len(sys.argv) == 2 and sys.argv[1].lower() == 'del':
       for i in list(mcbShelf.keys()):
             del mcbShelf[i]
