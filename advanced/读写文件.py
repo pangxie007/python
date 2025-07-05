@@ -81,6 +81,25 @@ r'''
     # print(textFilePath.split(os.sep))
     # print(textFilePath.split('\\'))
 
+#合并路径 【os.path.join】
+    # import os
+    #
+    # # 示例 1：组合目录和文件名
+    # directory = "/home/user"
+    # filename = "example.txt"
+    # full_path = os.path.join(directory, filename)
+    # print(full_path)  # 输出：/home/user/example.txt (Linux/macOS)
+    #                   # 或：C:\home\user\example.txt (Windows)
+
+#计算相对路径【os.path.relpath】
+    # import os
+    #
+    # # 示例 1：计算相对路径
+    # absolute_path = "/home/user/docs/report.txt"
+    # start_directory = "/home/user"
+    # relative_path = os.path.relpath(absolute_path, start_directory)
+    # print(relative_path)  # 输出：docs/report.txt
+
 #查看文件大小和文件内容
     # import os
     # print(os.path.getsize(r'D:\python\project\README.md'))

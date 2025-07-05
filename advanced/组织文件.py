@@ -4,7 +4,7 @@
     # shutil.copy(r"D:/python/project/FunctionTest/PengXvsb.py",r"D:/python/project/FunctionTest/组织文件测试")
     # shutil.copy(r"D:/python/project/FunctionTest/组织文件测试/PengXvsb.py",r"D:/python/project/FunctionTest/组织文件测试/test.pyw")
 
-    # shutil.copytree(r"/FunctionTest/a", r"D:/python/project/FunctionTest/组织文件测试/b")
+    # shutil.copytree(r"/FunctonTest/a", r"D:/python/project/FunctionTest/组织文件测试/b")
 
 #文件和文件夹的移动与重命名【shutil.move】
     # import shutil
@@ -75,3 +75,5 @@
     # newZip=zipfile.ZipFile(r"D:\python\project\FunctionTest\组织文件测试\new.zip",'a')
     # newZip.write(r"D:\python\project\FunctionTest\组织文件测试\test.pyw",'test.pyw',compress_type=zipfile.ZIP_DEFLATED)
     # print(newZip.namelist())
+
+#在zip中创建一个
