@@ -1,5 +1,3 @@
-a='012-456-89898'
-print(a[:3].isdecimal())
-print(a[4:7].isdecimal())
-print(a[0:0+12])
-print(a[-4:])
+import os
+path=r"D:\python\project\FunctionTest\遍历目录数测试目录\walnuf\waffles\3.txt"
+print(os.path.getsize(path))
