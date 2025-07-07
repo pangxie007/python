@@ -12,7 +12,7 @@ def backupToZip(folder,backfolder):
     zipName=(f"{os.path.basename(folder)}_{now.year}_{now.month}_{now.day}_{now.hour}_{now.minute}.zip")
     #创建压缩包
     createZip=zipfile.ZipFile(rf"{bf}\{zipName}",'w')
-    #将文件写入压缩包
+    #遍历目录树 将文件写入压缩包
     '''原理利用了zipfile会自己创建路径的文件夹'''
     for folderName, subfolders, filenames in os.walk(rf"{folder}"):
         for file in filenames:
