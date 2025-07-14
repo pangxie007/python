@@ -19,6 +19,24 @@
     #     except Exception as err:
     #         print(f"有一个例外发生:{err}")
 
+#异常处理
+    # try:
+    #     # 可能会抛出异常的代码
+    #     pass
+    # except ExceptionType1:
+    #     # 处理特定类型的异常
+    #     pass
+    # except ExceptionType2:
+    #     # 处理另一种类型的异常
+    #     pass
+    # else:
+    #     # 如果没有异常发生，执行此代码块
+    #     pass
+    # finally:
+    #     # 无论是否发生异常，都会执行此代码块
+    #     # 通常用于清理资源（如关闭文件、释放锁等）
+    #     pass
+
 #取得回溯字符串
     # def spam():
     #     bacon()

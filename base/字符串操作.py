@@ -159,6 +159,8 @@
 
     #字符串方法 join() 和 split()
         # spam=['cat','rats','bats']      #join()方法可以将字符串列表连接起来
+        # print(''.join(spam))
+        # print(' '.join(spam))
         # symbol='|'
         # print(symbol.join(spam))
         # symbol=' '
