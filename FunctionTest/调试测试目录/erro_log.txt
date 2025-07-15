@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "D:\python\project\advanced\调试.py", line 31, in <module>
+    raise Exception("这个错误是为了取得回溯字符串")
+Exception: 这个错误是为了取得回溯字符串
+2025-07-06 22:42:52,139-DEBUG-错误日志收集
