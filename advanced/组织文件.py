@@ -1,4 +1,8 @@
 """shutil模块，可以在python程序中复制、移动、重命名和删除文件"""
+#os模块创建文件夹
+# import os
+# os.makedirs(r'D:\python\project\FunctionTest\组织文件测试\aaa',exist_ok=True)
+
 #复制文件和文件夹 【shutil.copy shutil.copytree】
     # import shutil
     # shutil.copy(r"D:/python/project/FunctionTest/PengXvsb.py",r"D:/python/project/FunctionTest/组织文件测试")
@@ -35,10 +39,14 @@
 
 #遍历目录树  【os.walk os.listdir】
     # import os
+    #os.walk方法
     # for folderName,subfolders,filenames in os.walk(r"D:/python/project/FunctionTest/遍历目录数测试目录"):
     #     print(f'文件夹有:{folderName}')
     #     print(f'子目录有:{subfolders}')
     #     print(f'文件有:{filenames}')
+
+    #os.listdir方法
+    # print(os.listdir(r'D:\python\project\FunctionTest\处理CSV文件和JSON数据测试目录\项目：从CSV文件中删除标题行'))
 
 #用zipfile模块压缩文件
 #读取zip文件
