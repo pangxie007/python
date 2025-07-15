@@ -1,3 +1,9 @@
-import os
-path=r"D:\python\project\FunctionTest\遍历目录数测试目录\walnuf\waffles\3.txt"
-print(os.path.getsize(path))
+spam='Hello World!'
+print(spam.startswith('Hello'))
+print(spam.endswith('World!'))
+spam='abcd123'
+print(spam.startswith('abcddd'))
+print(spam.endswith('12'))
+spam='Hello World!'
+print(spam.startswith('Hello World!'))
+print(spam.endswith('Hello World!'))
